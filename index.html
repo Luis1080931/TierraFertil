@@ -19,22 +19,26 @@
         <form method="dialog">
             <label for="">Correo</label>
             <input type="email" required placeholder="Correo Electronico">
+            <label for="">Contraseña</label>
             <input type="password" required placeholder="Contraseña">
             <div class="interaccion">
-                <a href="./inicio.html">Iniciar Sesión</a>
-                <a href="#" class="login">Cerrar</a>
+                <a href="./inicio.html" class="btn-login">Iniciar Sesión</a>
+                <a href="#" class="login btn-close">Cerrar</a>
             </div>
         </form>
     </dialog>
     <dialog class="dialog-signUp">
         <h2>Registrarse</h2>
         <form method="dialog">
+            <label for="">Nombre de Usuario</label>
+            <input type="text" required placeholder="Nombre de Usuario">
             <label for="">Correo</label>
             <input type="email" required placeholder="Correo Electronico">
+            <label for="">Contaseña</label>
             <input type="password" required placeholder="Contraseña">
             <div class="interaccion">
-                <a href="./inicio.html">Registrarse</a>
-                <a href="#" class="signUp">Cerrar</a>
+                <a href="./inicio.html" class="btn-login">Registrarse</a>
+                <a href="#" class="signUp btn-close">Cerrar</a>
             </div>
         </form>
     </dialog>
@@ -47,11 +51,11 @@
         })
 
         document.querySelector(".login").addEventListener("click", () => {
-            window.location.href = "/index.html"
+            document.querySelector("dialog.dialog-login").close();
         })
 
         document.querySelector(".signUp").addEventListener("click", () => {
-            window.location.href = "/index.html"
+            document.querySelector("dialog.dialog-signUp").close();
         })
     </script>
 </body>
