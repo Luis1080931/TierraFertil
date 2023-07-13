@@ -4,16 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Tierra Fertil </title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-
+    <video src="./img/bg.mp4" autoplay loop></video>
     <nav>
-        <ul>
-            <a href="registro.html" target="_blank"><li> Registrarse </li></a>
-            <a href="inicioSesion.html" target="_blank"><li> Iniciar sesión </li></a>
-        </ul>
+        <div class="interaccion">
+            <button id="openLogin">Iniciar sesión</button>
+            <button id="openSignUp">Registrarse</button>
+        </div>
     </nav>
+    <dialog class="dialog-login">
+        <h2>Iniciar Sesión</h2>
+        <form method="dialog">
+            <label for="">Correo</label>
+            <input type="email" required placeholder="Correo Electronico">
+            <input type="password" required placeholder="Contraseña">
+            <div class="interaccion">
+                <a href="./inicio.html">Iniciar Sesión</a>
+                <a href="#" class="login">Cerrar</a>
+            </div>
+        </form>
+    </dialog>
+    <dialog class="dialog-signUp">
+        <h2>Registrarse</h2>
+        <form method="dialog">
+            <label for="">Correo</label>
+            <input type="email" required placeholder="Correo Electronico">
+            <input type="password" required placeholder="Contraseña">
+            <div class="interaccion">
+                <a href="./inicio.html">Registrarse</a>
+                <a href="#" class="signUp">Cerrar</a>
+            </div>
+        </form>
+    </dialog>
+    <script>
+        document.querySelector("#openLogin").addEventListener("click", () => {
+            document.querySelector("dialog.dialog-login").showModal();
+        })
+        document.querySelector("#openSignUp").addEventListener("click", () => {
+            document.querySelector("dialog.dialog-signUp").showModal();
+        })
 
+        document.querySelector(".login").addEventListener("click", () => {
+            window.location.href = "/index.html"
+        })
+
+        document.querySelector(".signUp").addEventListener("click", () => {
+            window.location.href = "/index.html"
+        })
+    </script>
 </body>
 </html>
